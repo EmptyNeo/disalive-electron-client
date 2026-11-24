@@ -1,7 +1,7 @@
 {
   "name": "disalive-desktop",
   "productName": "Disalive",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Desktop client for Disalive",
   "author": "Disalive",
   "license": "MIT",
@@ -16,9 +16,9 @@
   "build": {
     "appId": "ru.disalive.desktop",
     "productName": "Disalive",
-    "buildVersion": "1.0.3.0",
+    "buildVersion": "1.0.4.0",
     "directories": {
-      "output": "out/1.0.3.0"
+      "output": "out/1.0.4.0"
     },
     "files": [
       "**/*",
