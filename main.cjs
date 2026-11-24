@@ -11,7 +11,7 @@ if (process.argv.some(argument => argument.startsWith('--squirrel-'))) {
   const headerHeight = 32; //в Discord высота 32px
   const allowedPermissions = new Set(['media', 'display-capture', 'notifications', 'clipboard-read', 'clipboard-sanitized-write', 'fullscreen']);
   const defaultTheme = { background: '#1e1f22', foreground: '#dbdee1', muted: '#949ba4', border: '#3f4147', accent: '#0e6ee2', danger: '#ed4245' };
-  let theme = { ...defaultTheme, 'rail-gradient': 'none', 'rail-gradient-height': '38px' };
+  let theme = { ...defaultTheme, 'rail-gradient': 'none', 'rail-gradient-height': '32px' };
   let mainWindow, appView, titleView, pickerView, tray, trayMenuWindow, notificationWindow, tooltipWindow, splashWindow;
   let updateChoiceResolver = null;
   let checkingUpdates = false;

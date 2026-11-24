@@ -1,24 +1,18 @@
 const resourceBase = 'https://disalive.ru/resources/';
+const bundledLogo = new URL('assets/LogoEmpty.svg', window.location.href).href;
 const iconFiles = {
-  app: 'LogoEmpty.svg',
-  server: 'LogoEmpty.svg',
-  chat: 'LogoEmpty.svg',
-  friends: 'Friends.svg',
-  discover: 'Discover.svg',
-  profile: 'LogoEmpty.svg'
+  app: bundledLogo,
+  server: bundledLogo,
+  chat: bundledLogo,
+  friends: resourceBase + 'Friends.svg',
+  discover: resourceBase + 'Discover.svg',
+  profile: bundledLogo
 };
 
 document.querySelectorAll('[data-action]').forEach(button => {
   button.addEventListener('click', () => {
-    window.desktopTitlebar.tooltip(null);
     window.desktopTitlebar.control(button.dataset.action);
   });
-  button.addEventListener('mouseenter', () => {
-    if (button.disabled || !button.dataset.tooltip) return;
-    const bounds = button.getBoundingClientRect();
-    window.desktopTitlebar.tooltip({ text: button.dataset.tooltip, x: bounds.left + bounds.width / 2 });
-  });
-  button.addEventListener('mouseleave', () => window.desktopTitlebar.tooltip(null));
 });
 
 window.desktopTitlebar.onTitle(({ title, type, icon: serverIcon }) => {
@@ -26,10 +20,10 @@ window.desktopTitlebar.onTitle(({ title, type, icon: serverIcon }) => {
   const holder = document.getElementById('icon');
   const image = document.createElement('img');
   image.alt = '';
-  image.src = type === 'server' && serverIcon ? serverIcon : resourceBase + (iconFiles[type] || iconFiles.app);
+  image.src = type === 'server' && serverIcon ? serverIcon : (iconFiles[type] || iconFiles.app);
   image.onerror = () => {
     image.onerror = null;
-    image.src = resourceBase + iconFiles.app;
+    image.src = iconFiles.app;
   };
   image.classList.toggle('server-icon', type === 'server' && !!serverIcon);
   holder.replaceChildren(image);
