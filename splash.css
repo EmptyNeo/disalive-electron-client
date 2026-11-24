@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; }
+body { display: grid; place-items: center; overflow: hidden; color: #f2f3f5; background: #1e1f22; font: 13px 'Manrope', 'Segoe UI', sans-serif; }
+main { display: flex; flex-direction: column; align-items: center; width: 100%; padding: 24px; }
+.loading-logo-wrapper { position: relative; display: flex; align-items: center; justify-content: center; width: 84px; height: 84px; margin-bottom: 28px; }
+.loading-main-circle { position: absolute; inset: 0; border: 4px solid rgba(79,84,92,.4); border-top-color: #0e6ee2; border-radius: 50%; animation: loading-spin 1.2s cubic-bezier(.68,-.55,.27,1.55) infinite; }
+.loading-pulse-ring { display: grid; place-items: center; width: 70%; height: 70%; border-radius: 50%; background: #0e6ee2; animation: loading-pulse 2s ease-in-out infinite; }
+.loading-pulse-ring img { width: 72%; height: 72%; object-fit: contain; }
+#status { min-height: 22px; max-width: 310px; color: #b5bac1; text-align: center; }
+.loading-progress-container { width: 260px; height: 6px; margin-top: 12px; overflow: hidden; border-radius: 10px; background: #111214; }
+.loading-progress-fill { width: 0; height: 100%; border-radius: inherit; background: #0e6ee2; box-shadow: 0 0 12px #0b5ac0; transition: width .2s ease; }
+.choices { display: flex; gap: 8px; margin-top: 18px; }
+.choices[hidden] { display: none; }
+button { min-width: 106px; height: 32px; border: 0; border-radius: 6px; color: #f2f3f5; background: #404249; font: 600 13px 'Manrope', 'Segoe UI', sans-serif; cursor: pointer; }
+button:hover { background: #53565e; }
+#install { background: #0e6ee2; }
+#install:hover { background: #0b5ac0; }
+@keyframes loading-spin { to { transform: rotate(360deg); } }
+@keyframes loading-pulse { 0%,100% { opacity: .8; transform: scale(1); } 50% { opacity: 1; transform: scale(1.08); } }

@@ -1,0 +1,15 @@
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { padding: 4px; color: var(--foreground, #dbdee1); font: 13px 'Manrope', 'Segoe UI', sans-serif; }
+#notifications { display: flex; flex-direction: column; gap: 8px; }
+.notification { position: relative; display: flex; flex: none; align-items: center; gap: 10px; width: 100%; height: 72px; padding: 9px 38px 9px 10px; overflow: hidden; border: 1px solid var(--border, #3f4147); border-left: 3px solid var(--accent, #0e6ee2); border-radius: 10px; background: var(--background, #111214); box-shadow: 0 8px 28px rgba(0,0,0,.35); cursor: pointer; }
+.notification { animation: notification-enter .18s ease-out; }
+@keyframes notification-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.avatar { flex: none; width: 38px; height: 38px; border-radius: 50%; object-fit: cover; background: var(--border, #3f4147); }
+.avatar-fallback { display: grid; place-items: center; color: #fff; background: var(--accent, #0e6ee2); font-weight: 800; }
+.content { min-width: 0; }
+.title { overflow: hidden; margin: 1px 0 4px; text-overflow: ellipsis; white-space: nowrap; font-weight: 800; }
+.body { display: -webkit-box; overflow: hidden; color: var(--muted, #949ba4); line-height: 1.35; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.close { position: absolute; top: 7px; right: 8px; display: flex; align-items: center; justify-content: center; width: 25px; height: 25px; padding: 0; border: 0; border-radius: 5px; color: var(--muted, #949ba4); background: transparent; cursor: pointer; font-size: 18px; line-height: 1; }
+.close svg { display: block; width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.close:hover { color: var(--foreground, #dbdee1); background: color-mix(in srgb, var(--foreground, #dbdee1) 10%, transparent); }

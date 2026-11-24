@@ -1,0 +1,4 @@
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { display: grid; place-items: center; padding: 3px; font: 12px 'Manrope', 'Segoe UI', sans-serif; }
+#text { max-width: 100%; padding: 6px 10px; overflow: hidden; border: 1px solid var(--border, #3f4147); border-radius: 6px; background: var(--background, #111214); color: var(--foreground, #dbdee1); text-overflow: ellipsis; white-space: nowrap; box-shadow: 0 2px 8px rgba(0, 0, 0, .35); }

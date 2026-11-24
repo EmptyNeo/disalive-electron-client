@@ -1,0 +1,8 @@
+node_modules/
+out/
+release/
+assets/icon.ico
+assets/icon.png
+*.log
+.env
+.env.*

@@ -1,0 +1,66 @@
+{
+  "name": "disalive-desktop",
+  "productName": "Disalive",
+  "version": "1.0.3",
+  "description": "Desktop client for Disalive",
+  "author": "Disalive",
+  "license": "MIT",
+  "main": "main.cjs",
+  "scripts": {
+    "icon": "node generate-icon.mjs",
+    "start": "electron .",
+    "package:win": "npm run icon && electron-builder --win dir --x64",
+    "make:win": "npm run icon && electron-builder --win nsis --x64 && node build-release.cjs",
+    "test:update-package": "node test-update-package.cjs"
+  },
+  "build": {
+    "appId": "ru.disalive.desktop",
+    "productName": "Disalive",
+    "buildVersion": "1.0.3.0",
+    "directories": {
+      "output": "out/1.0.3.0"
+    },
+    "files": [
+      "**/*",
+      "!out/**",
+      "!*.cs",
+      "!*.md",
+      "!forge.config.cjs",
+      "!installer.nsh",
+      "!build-release.cjs",
+      "!test-update-package.cjs"
+    ],
+    "asarUnpack": [
+      "hotkey-monitor.exe",
+      "update-helper.exe"
+    ],
+    "extraFiles": [
+      "LICENSE"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "include": "installer.nsh",
+      "license": "LICENSE",
+      "artifactName": "DLInstall.exe",
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "language": "1049"
+    }
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0",
+    "png-to-ico": "^3.0.2"
+  },
+  "dependencies": {
+    "adm-zip": "^0.6.1"
+  }
+}

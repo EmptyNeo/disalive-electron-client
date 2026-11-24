@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { padding: 4px; font: 13px 'Manrope', 'Segoe UI', sans-serif; color: var(--foreground, #dbdee1); }
+.menu { height: 100%; padding: 4px; border: 1px solid var(--border, #3f4147); border-radius: 10px; background: var(--background, #111214); filter: drop-shadow(0 2px 4px rgba(0,0,0,.4)); }
+button { display: flex; align-items: center; justify-content: flex-start; width: 100%; height: 32px; padding: 0 12px; text-align: left; border: 0; border-radius: 5px; color: inherit; background: transparent; font: inherit; cursor: pointer; }
+button[data-action="open"] { color: var(--accent, #0e6ee2); }
+button[data-action="quit"] { color: var(--danger, #ed4245); }
+button[data-action="open"]:hover, button[data-action="open"]:focus-visible { outline: none; color: #fff; background: var(--accent, #0e6ee2); }
+button[data-action="quit"]:hover, button[data-action="quit"]:focus-visible { outline: none; color: #fff; background: var(--danger, #ed4245); }
